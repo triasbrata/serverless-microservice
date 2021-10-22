@@ -29,7 +29,7 @@ import { ScheduleModule } from '@nestjs/schedule';
         inject: [ConfigService]
       },
     ]),
-    ScheduledJobModule,
+    ScheduledJobModule.forRoot(),
   ],
   controllers: [TestController],
   providers: [TestService],

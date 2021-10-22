@@ -1,5 +1,5 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { Inject, Injectable, Logger, OnApplicationBootstrap, Optional } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { catchError, firstValueFrom, of, tap } from 'rxjs';
 
@@ -9,9 +9,18 @@ export class Heartbeat implements OnApplicationBootstrap {
   /**
    *
    */
-  constructor(private readonly httpService: HttpService) { }
-  onApplicationBootstrap() {
-    this.handleCallServer();
+  constructor(
+    private readonly httpService: HttpService,
+    @Optional()
+    @Inject('wait-for-server')
+    private readonly waitResponse = false,
+  ) { }
+  async onApplicationBootstrap() {
+    if (this.waitResponse) {
+      await this.handleCallServer();
+    } else {
+      this.handleCallServer();
+    }
   }
   @Cron(CronExpression.EVERY_30_MINUTES)
   async handleCallServer() {
