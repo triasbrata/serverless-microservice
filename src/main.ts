@@ -18,8 +18,9 @@ async function bootstrap() {
   });
   const port = configService.get<number>('PORT');
   await app.listen(port, () => {
-    console.log(`server bind to port ${port}`)
+    console.log(`server bind to port ${port}`);
   });
+  app.startAllMicroservices();
   console.log('service ready to serve 🚀');
   await configModule.close();
 }
