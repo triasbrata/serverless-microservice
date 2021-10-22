@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/serverless-microservice/src",
+  "monorepo": true,
+  "root": "apps/serverless-microservice",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/serverless-microservice/tsconfig.app.json"
+  },
+  "projects": {
+    "serverless-microservice": {
+      "type": "application",
+      "root": "apps/serverless-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/serverless-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/serverless-microservice/tsconfig.app.json"
+      }
+    },
+    "test": {
+      "type": "application",
+      "root": "apps/test",
+      "entryFile": "main",
+      "sourceRoot": "apps/test/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test/tsconfig.app.json"
+      }
+    }
+  }
 }

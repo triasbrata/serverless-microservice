@@ -1,1 +1,1 @@
-web: node dist/main.js
+web: node dist/apps/serverless-microservice/main.js
