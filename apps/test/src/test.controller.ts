@@ -1,4 +1,4 @@
-import { Controller, Get, Inject, Logger, Post } from '@nestjs/common';
+import { Controller, Get, Inject, Logger } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { PatternEventQueue } from 'apps/serverless-microservice/src/constanta/pattern-event-queue';
 import { PatternMsgQueue } from 'apps/serverless-microservice/src/constanta/pattern-msg-queue';
