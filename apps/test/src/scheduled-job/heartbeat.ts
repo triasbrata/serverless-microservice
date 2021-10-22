@@ -11,7 +11,7 @@ export class Heartbeat implements OnApplicationBootstrap {
    */
   constructor(private readonly httpService: HttpService) { }
   onApplicationBootstrap() {
-    return this.handleCallServer()
+    this.handleCallServer();
   }
   @Cron(CronExpression.EVERY_30_MINUTES)
   async handleCallServer() {
