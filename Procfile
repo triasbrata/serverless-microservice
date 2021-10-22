@@ -1,1 +1,1 @@
-service: dist/main.js
+worker: dist/main.js
