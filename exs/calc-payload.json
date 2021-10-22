@@ -1,0 +1,7 @@
+{
+  "pattern": "msg:calc_current_balance",
+  "data": {
+    "startDate": 1634906802,
+    "endDate": 1635598002
+  }
+}

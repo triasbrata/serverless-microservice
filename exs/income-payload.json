@@ -1,0 +1,9 @@
+{
+  "pattern": "e:new_income_trx",
+  "data": {
+    "spaceId": 1,
+    "total": 1000,
+    "memo": "beli cireng",
+    "categoryId": 101
+  }
+}
