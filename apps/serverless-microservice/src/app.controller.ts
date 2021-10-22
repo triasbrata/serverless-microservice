@@ -26,7 +26,7 @@ export class AppController {
       payload.endDate,
     );
     balance += sumIncome - sumExpense;
-    this.logger.debug(`current balance : ${balance.toString()}`)
+    this.logger.debug(`current balance : ${balance.toString()}`);
     return balance.toString();
   }
 

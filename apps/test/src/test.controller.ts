@@ -20,7 +20,7 @@ export class TestController {
     const startDate = new Date();
     endDate.setDate(31);
     startDate.setDate(1);
-    this.service
+    return this.service
       .send<string>(PatternMsgQueue.CALC_CURRENT_BALANCE, {
         startDate: startDate.getTime(),
         endDate: endDate.getTime(),

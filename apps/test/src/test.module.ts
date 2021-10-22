@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { TestController } from './test.controller';
 import { TestService } from './test.service';
+import { ScheduledJobModule } from './scheduled-job/scheduled-job.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -27,6 +29,7 @@ import { TestService } from './test.service';
         inject: [ConfigService]
       },
     ]),
+    ScheduledJobModule,
   ],
   controllers: [TestController],
   providers: [TestService],
